@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
+import xyz.liyouxiu.jedis.util.JedisConnectionFactory;
 
 import java.util.Map;
 
@@ -20,7 +21,8 @@ public class JedisTest {
     @BeforeEach
     void setUp() {
         //2.1建立连接
-        jedis=new Jedis("192.168.188.137",6379);
+//        jedis=new Jedis("192.168.188.137",6379);
+        jedis= JedisConnectionFactory.getJedis();
         //2.2设置密码
         jedis.auth("123456");
         //2.3选择库
