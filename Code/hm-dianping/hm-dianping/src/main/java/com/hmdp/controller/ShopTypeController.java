@@ -27,8 +27,10 @@ public class ShopTypeController {
 
     @GetMapping("list")
     public Result queryTypeList() {
-        List<ShopType> typeList = typeService
-                .query().orderByAsc("sort").list();
-        return Result.ok(typeList);
+        //mybatisplus----》Redis
+//        List<ShopType> typeList = typeService
+//                .query().orderByAsc("sort").list();
+
+        return typeService.queryTypeList();
     }
 }
